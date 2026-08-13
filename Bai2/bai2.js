@@ -84,3 +84,113 @@ if (ketQuaTimKiem === -1){
 }else{
     console.log('Dang nhap thanh cong')
 }
+
+
+// slice: nhan 2 doi so(vi tri bat dau, vi tri ket thuc)
+
+// ?id=ORD-987654-2025& => ORD-987654-2025
+const urlTrangThanhCong = 'https://example.com/order-success?id=ORD-987654-2025&status=paid'
+
+const viTriBatDau = urlTrangThanhCong.indexOf('id=') + 3
+
+const viTriKetThuc = urlTrangThanhCong.indexOf('&status')
+
+const maDonHang = urlTrangThanhCong.slice(viTriBatDau, viTriKetThuc)
+
+console.log(`Ma don hang la ${maDonHang}`)
+
+// Cach 2
+const phanSauDauBang = urlTrangThanhCong.split('=')
+
+
+// (3) ['https://example.com/order-success?id', 'ORD-987654-2025&status', 'paid']
+console.log(phanSauDauBang)
+
+// lay phan tu 2, split
+
+const maDonHang1 = phanSauDauBang[1].split('&')[0]
+
+console.log(maDonHang1)
+
+//////////////////////////
+
+// Number
+
+// Round down
+console.log(Math.floor(4.99)) //4
+
+// Round up
+console.log(Math.ceil(4.01))  //5
+
+// Round
+// Neu phan thap phan >=5
+
+console.log(Math.round(4.7)) // 5
+console.log(Math.round(4.49))  // 4
+
+
+// Return random number between 0<= and <1
+console.log(Math.random())
+// 0.5345
+
+// Tao so nguyen tu 0 den max
+max = 10
+
+const soNgauNhien = Math.floor(Math.random() * (max + 1))
+// Math.floor(Math.random() * (max + 1))
+
+Math.random() // tra ve so ngau nhien 0<= n < 1
+
+// gia tri nho nhat : 0 * 101 = 0
+// gia tri lon nhat: 0.9999 * 101 = 100.999
+
+///////////////////////////////////
+
+// Tao so nguyen tu min => max
+// 50-100
+
+min = 1
+const randomNumber = Math.floor(Math.random()* (max-min+1)  + min)
+
+console.log(randomNumber)
+
+///////////////////////////////////
+// Random number: 50 => 55 => Result = 50,51,52,53,54,55
+
+// length = 55 - 50 + 1 = 6
+
+// Math.random()*length => 0 to 5.9999
+// Math.floor => 0,1,2,3,4,5
+
+//0 + 50 = 50
+//1 + 50 = 51
+
+
+///////////////////////////
+const tamTinhTextUI = 'Tam tinh: 1,250,500,75 VND'
+const tongCongTextUi = 'Tong cong (da giam): 1,250,450,75 VND'
+
+// Convert message: => 1250500.75 VND => 1125045075
+let tamTinh = tamTinhTextUI.replaceAll(',','').replace(' VND','').replace('Tam tinh: ','')
+console.log(tamTinh)
+let tongCong = tongCongTextUi.replaceAll(',','').replace(' VND','').replace('Tong cong (da giam): ','')
+console.log(tongCong)
+
+// Math.random() tao user ngau nhien dang tester_ + 4 chu so(tester_8212)
+
+const randomNumberAuto = Math.floor(Math.random()* (9999-1000+1)  + 1000)
+console.log(`tester_${randomNumberAuto}`)
+
+// A B testing
+// userId chan vao giao dien B, userId le vao giao dien A
+
+const userIdChan = 84322
+const userIdLe = 84321
+
+const soDu = userIdChan % 2
+
+if(soDu === 0){
+    console.log('Giao dien B')
+}else{
+    console.log('Giao dien A')
+}

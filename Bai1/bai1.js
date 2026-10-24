@@ -1,20 +1,50 @@
-// alert("Hello world")
+alert("Hello world I'm nguyen")
 
 console.log('I am javasript')
 
-// Variable
+/*
+    Variable
+    Declaration, Assignment, Retrieval 
+
+*/ 
+
+
 let teacherName
 teacherName = 'Hoang'
 
 console.log(teacherName)
 
 
-// let vs const
-// let: can replace value
-// const: can not replace value 
+
+/*
+    Delare variable: let vs const
+    let: can replace value
+    const: can not replace value 
+
+*/
+
+let diemSo;
+diemSo = 8;
+console.log(diemSo)
+
+diemSo = 10
+console.log(diemSo)
 
 
-// Print value to the screen/console log: ' , `
+const soPi = 3.14
+
+/*
+    Print value to the screen/console log: ' , `
+    1. Concat +
+    2. Comma ,
+    3. Template Literals (backtick `)
+
+
+
+
+*/
+
+
 
 const tenTestCase = 'TC01 - Login'
 
@@ -23,6 +53,9 @@ const trangThai = 'Passed'
 const thoiGianChay = 3500
 
 console.log('Test case: ' + tenTestCase + ' Status: ' + trangThai + ' Duration: ' + thoiGianChay)
+
+
+
 
 const tenTestCase2 = 'TC02 - Login'
 

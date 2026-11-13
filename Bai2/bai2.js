@@ -1,9 +1,39 @@
-// String
+/*
+    String Methods
+    .length : tinh do dai cua string
+    .trim(): 
+    .includes(): 
+    .indexOf()
+    .toLowerCase()
+    .toLocaleUpperCase()
+    .replace() / .replaceAll()
+
+    .slice()
+    .split()
+
+    Number
+    .toFixed(): lam tron so thap phan, tra ve string
+    Math.random()
+    Math.floor()
+    Math.ceil()
+    Math.round()
+
+
+
+
+
+*/
+
+
+const tenSanPham = 'Ao So Mi'
+
 
 const matKhauKhongHopLe = '12345'
 
+// Condition
 const viPhamDoDai = (matKhauKhongHopLe.length < 8 || matKhauKhongHopLe.length > 16)
 
+// => true
 if(viPhamDoDai){
     console.log('Loi mat khau khong du dai')
 }
@@ -19,14 +49,19 @@ console.log(`Do dai cua mat khau : ${matKhauKhongHopLe.length}`)
 const tuKhoaTimKiem = 'iPhone 17'
 const tieuDeSanPhamUI = 'Apple iPhone 17 Pro Max'
 
+// => true
 const coChuaTuKhoa = tieuDeSanPhamUI.toLowerCase().includes(tuKhoaTimKiem.toLowerCase())
 
+// => true
 if(coChuaTuKhoa){
     console.log('Co chua tu khoa')
 }
 
+const tuKhoaTimKiemLowerCase = tuKhoaTimKiem.toLowerCase()
+const tieuDeSanPhamUILowerCase = tieuDeSanPhamUI.toLowerCase()
+const coChuaTuKhoaNew = tuKhoaTimKiemLowerCase.includes(tieuDeSanPhamUILowerCase)
 
-// trim
+// trim() : remove white space
 const tenNguoiDungUI = ' Nguyen Van A '
 const tenDaTrim = tenNguoiDungUI.trim()
 const tenNguoiDungMongDoi = 'Nguyen Van A'
@@ -194,3 +229,146 @@ if(soDu === 0){
 }else{
     console.log('Giao dien A')
 }
+
+// Ep chuoi
+const soLuongKeo = 5
+const soLuongBang = 5
+
+console.log(`Tong so: ${soLuongBang + soLuongKeo}, type of: ${typeof(soLuongBang + soLuongKeo)}`)
+
+
+const donGiaText = "25000"
+const phiShip = "10000"
+
+console.log(`Tong tien ${donGiaText + phiShip}, type of: ${typeof(donGiaText)}`)
+
+
+const chieuRongText = '350px'
+chieuRongText.replace('px','')
+
+
+const soLuongText = '15 san pham'
+console.log(parseInt(soLuongText)) // => 15
+
+const giaTienText = '$29.99 USD'
+const giaTien = giaTienText.replace('$','')
+console.log(parseFloat(giaTien))
+
+// number
+const tongTienText = 'Tong thanh toan: 2,540,000.50 VND'
+const chuoiDaLamSach = tongTienText.replace('Tong thanh toan: ','').replace('VND','').replaceAll(',','')
+
+const chuoiNumber = Number(chuoiDaLamSach)
+console.log(chuoiNumber)
+
+
+// Step to clean data
+//1. Lau du lieu tho tu UI
+//2. So che du lieu bang cac phuong thuc chuoi
+//3. Ep kieu bang phuong thuc phu hop
+//4. Thuc hien tinh toan tu buoc 3
+
+// NaN: not a number
+// ep kieu that bai
+// thuc hien phep toan bat kha thi (vo nghia)
+
+
+let ketQuaTinhToan = parseInt('abc')
+console.log(Number.isNaN(ketQuaTinhToan)) //=> true
+
+
+const tonKhoText1 = 'Ton kho: 25'
+const tonKhoText2 = 'Ton kho: het hang'
+
+function kiemTraVaHanhDong(inputText){
+    console.log(`Dang xu ly chuoi ${inputText}`)
+
+    // B2. So che va ep kieu
+    const chuoiSo = inputText.replace('Ton kho: ','')
+
+    const soLuong = parseInt(chuoiSo)
+
+    //
+    if(Number.isNaN(soLuong)){
+        console.log('San pham het hang, bo qua hanh dong them vao gio hang')
+    }
+    else{
+        console.log(`So luong hang ton: ${soLuong}`)
+        if(soLuong > 0){
+            console.log('Thuc hien hanh dong them vao gio hang')
+        }
+    }
+
+}
+
+console.log('Kich ban 1: con hang')
+kiemTraVaHanhDong(tonKhoText1)
+
+console.log('Kich ban 2: het hang')
+kiemTraVaHanhDong(tonKhoText2)
+
+
+////////////////////////
+// Assignment operator: += -+ *= /=
+let x = 10
+
+
+let soTestCaseFail = 0
+
+// Lan dau test 1 login fail
+soTestCaseFail += 1
+
+console.log(soTestCaseFail)
+
+// Increment/ Decrement operator
+//   x++
+
+let thuTuVeXemPhim = 10
+let veHienTai = thuTuVeXemPhim++
+
+console.log(`Ve hien tai bay gio dang la so: : ${veHienTai}`)
+
+console.log(`Thu tu bay gio la ${thuTuVeXemPhim}`)
+
+// ++x
+let thuTuVeXemPhim1 = 10
+let veHienTai1 = ++thuTuVeXemPhim1
+
+console.log(`Ve hien tai bay gio dang la so: : ${veHienTai1}`)
+
+console.log(`Thu tu bay gio la ${thuTuVeXemPhim1}`)
+
+////
+let soLanClick = 0
+
+console.log('Da click lan dau tien')
+// soLanClick++
+++soLanClick
+
+console.log(`Tong so lan da click ${soLanClick}`)
+
+///////
+let attempts = 0
+const MAX_ATTEMPTS = 3
+
+function performClickWithRetry(){
+    console.log(`Bat dau thuc hien click, lan thu:  ${attempts++}`)
+
+    const isSuccess = false
+
+    if(!isSuccess){
+        if(attempts++ >= MAX_ATTEMPTS){
+            console.log(`Da thu ${attempts} va van that bai. Dung lai`)
+        }
+        else{
+            console.log(` Click that bai, so lan da thu ${attempts}`)
+        }
+    }
+}
+
+performClickWithRetry()
+performClickWithRetry()
+performClickWithRetry()
+performClickWithRetry()
+performClickWithRetry()
+

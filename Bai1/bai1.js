@@ -30,16 +30,13 @@ console.log(diemSo)
 diemSo = 10
 console.log(diemSo)
 
-
 const soPi = 3.14
 
 /*
     Print value to the screen/console log: ' , `
     1. Concat +
-    2. Comma ,
+    2. Comma , : auto add space
     3. Template Literals (backtick `)
-
-
 
 
 */
@@ -65,13 +62,15 @@ const thoiGianChay2 = 3500
 
 console.log('Test case: ' , tenTestCase2, ' Status: ' , trangThai2 , ' Duration: ' , thoiGianChay2)
 
+
+
 const tenTestCase3 = 'TC03 - Registration'
 
-const thoiGianChay3 = 4000
+const thoiGianChay3 = 3500
 
 // Template literals (backtick `)
 
-console.log(`Test case : ${tenTestCase3} - Duration:${thoiGianChay3 * 2}`)
+console.log(`Test case: ${tenTestCase3} - Duration: ${thoiGianChay3 * 2}`)
 
 // Di sieu thi mua 2 cai ao, moi cai gia 25000 VND. Thue VAT la 10% => hoi tong so tien phai tra la bao nhieu 
 
@@ -82,9 +81,30 @@ const vat = 0.1
 console.log(`${count} cai ao. Tong so tien la ${price*2*0.1 + price*2}`)
 console.log(`${count} cai ao. Tong so tien la ${price*2.2}`)
 
+const gia1Ao = 25000
+const soLuongAo = 2
+const thueVAT = 0.1
+let tongTienHang = gia1Ao * soLuongAo
+let tongThanhToan = tongTienHang + tongTienHang*thueVAT
 
-// How to declare variable name 
-// camelCase
+/*
+    How to declare variable name
+    1. a-z A-Z 0-9 _ $
+    2. Khong duoc bat dau bang so
+    3. camelCase
+    4. Khong duoc dung tu khoa cua Javascript
+    5. Ten dat phai co y nghia
+
+*/
+
+let x = 10
+let y = 'Hoang'
+let z = x * 2
+let soLuong = 10
+let tenNguoiDung = 'Hoang'
+let diemThuong = soLuong * 2
+
+
 
 let tenKhachHang 
 
@@ -98,6 +118,7 @@ const tenSach = 'Lap Trinh JS'
 console.log(typeof(loiChao))
 
 const userName = 'automation@gmail.com'
+const productSelector0 =`h2:has-text("${userName}")`
 
 
 let id = 1
@@ -122,12 +143,12 @@ else{
     console.log('Test failed')
 }
 
-// Undefined
+// Undefined: already declared but no value 
 let abc
 console.log(abc) // ==> undefined
 
 
-// null
+// null : already declared and assigned null value 
 // empty
 
 let popupKhuyenMai = null
